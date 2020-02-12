@@ -89,12 +89,12 @@ public struct WMSWorkOrder: Content, DSEntityPut {
         self.date = date
     }
 
-    struct Post: DSEntityRelated, DSEntityPost {
-        var entity: WMSWorkOrderRow {
+    public struct Post: DSEntityRelated, DSEntityPost {
+        public var entity: WMSWorkOrderRow {
             return WMSWorkOrderRow(id: nil, jobID: jobID, vehicleID: vehicleID, notes: notes, date: date)
         }
 
-        typealias EntityType = WMSWorkOrderRow
+        public typealias EntityType = WMSWorkOrderRow
 
         public var id: Int?
         public var jobID: WMSJobRow.ID
